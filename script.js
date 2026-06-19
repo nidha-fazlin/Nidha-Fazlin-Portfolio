@@ -5,6 +5,8 @@ const projectImages = document.querySelectorAll('.project-image img');
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 const navbar = document.querySelector('.navbar');
+const ambientMotion = document.querySelector('.ambient-motion');
+const heroPhoto = document.querySelector('.hero-photo');
 const scrollProgress = document.createElement('div');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -188,6 +190,7 @@ const updateActiveNavLink = () => {
 window.addEventListener('scroll', () => {
     updateActiveNavLink();
     updateScrollProgress();
+    updateMotionParallax();
 });
 
 updateActiveNavLink();
@@ -303,6 +306,45 @@ const addPointerTilt = () => {
     });
 };
 
+let motionTicking = false;
+
+const updateMotionParallax = () => {
+    if (prefersReducedMotion || motionTicking) return;
+
+    motionTicking = true;
+    requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+
+        if (ambientMotion) {
+            ambientMotion.style.transform = `translate3d(0, ${scrollY * -0.025}px, 0)`;
+        }
+
+        if (heroPhoto) {
+            heroPhoto.style.setProperty('--scroll-lift', `${Math.min(scrollY * 0.02, 10).toFixed(2)}px`);
+        }
+
+        motionTicking = false;
+    });
+};
+
+const addMobileTouchFeedback = () => {
+    if (!window.matchMedia('(pointer: coarse)').matches) return;
+
+    document.querySelectorAll('.skill-card, .stat, .contact-method').forEach(element => {
+        element.addEventListener('touchstart', () => {
+            element.classList.add('is-touch-active');
+        }, { passive: true });
+
+        element.addEventListener('touchend', () => {
+            setTimeout(() => element.classList.remove('is-touch-active'), 320);
+        }, { passive: true });
+
+        element.addEventListener('touchcancel', () => {
+            element.classList.remove('is-touch-active');
+        }, { passive: true });
+    });
+};
+
 const addProjectTouchOverlays = () => {
     if (!window.matchMedia('(pointer: coarse)').matches) return;
 
@@ -330,6 +372,8 @@ const addProjectTouchOverlays = () => {
 addButtonRipples();
 addPointerTilt();
 addProjectTouchOverlays();
+addMobileTouchFeedback();
+updateMotionParallax();
 
 // Add smooth scroll behavior for older browsers
 if (!('scrollBehavior' in document.documentElement.style)) {
