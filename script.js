@@ -1,6 +1,30 @@
 // DOM Elements
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+const closeMenu = () => {
+    if (!navToggle || !navMenu) return;
+
+    navToggle.classList.remove('active');
+    navMenu.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation menu');
+};
+
+const toggleMenu = () => {
+    if (!navToggle || !navMenu) return;
+
+    const isOpen = navMenu.classList.toggle('active');
+    navToggle.classList.toggle('active', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+};
+
+if (navToggle) {
+    navToggle.addEventListener('click', toggleMenu);
+}
 
 // Project Filtering
 filterBtns.forEach(btn => {
@@ -101,16 +125,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 block: 'start'
             });
 
-            // Close mobile menu if open (for future mobile menu implementation)
             closeMenu();
         }
     });
 });
-
-// Menu toggle function (for future expansion)
-const closeMenu = () => {
-    // Placeholder for mobile menu close functionality
-};
 
 // Navbar Active Link on Scroll
 const updateActiveNavLink = () => {
@@ -218,7 +236,18 @@ if ('IntersectionObserver' in window) {
 // Add keyboard navigation support
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        // Close any open modals or menus (extensible)
+        closeMenu();
+    }
+});
+
+document.addEventListener('click', (e) => {
+    if (!navMenu || !navToggle || !navMenu.classList.contains('active')) return;
+
+    const clickedInsideMenu = navMenu.contains(e.target);
+    const clickedToggle = navToggle.contains(e.target);
+
+    if (!clickedInsideMenu && !clickedToggle) {
+        closeMenu();
     }
 });
 
