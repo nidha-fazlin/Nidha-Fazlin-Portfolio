@@ -1,8 +1,20 @@
 // DOM Elements
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
+const projectImages = document.querySelectorAll('.project-image img');
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
+const scrollProgress = document.createElement('div');
+
+scrollProgress.className = 'scroll-progress';
+document.body.appendChild(scrollProgress);
+
+const updateScrollProgress = () => {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+
+    scrollProgress.style.width = `${Math.min(scrollPercent, 100)}%`;
+};
 
 const closeMenu = () => {
     if (!navToggle || !navMenu) return;
@@ -25,6 +37,18 @@ const toggleMenu = () => {
 if (navToggle) {
     navToggle.addEventListener('click', toggleMenu);
 }
+
+projectImages.forEach(image => {
+    image.addEventListener('error', () => {
+        const imageWrap = image.closest('.project-image');
+        const projectTitle = image.closest('.project-card')?.querySelector('h3')?.textContent || 'Project Preview';
+
+        if (imageWrap) {
+            imageWrap.classList.add('image-error');
+            imageWrap.dataset.fallback = projectTitle;
+        }
+    });
+});
 
 // Project Filtering
 filterBtns.forEach(btn => {
@@ -152,7 +176,12 @@ const updateActiveNavLink = () => {
     });
 };
 
-window.addEventListener('scroll', updateActiveNavLink);
+window.addEventListener('scroll', () => {
+    updateActiveNavLink();
+    updateScrollProgress();
+});
+
+updateScrollProgress();
 
 // Intersection Observer for Scroll Animations
 const observerOptions = {
@@ -163,19 +192,20 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.6s ease-out';
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe skill cards
-document.querySelectorAll('.skill-card').forEach(card => {
-    observer.observe(card);
-});
+const revealTargets = document.querySelectorAll(
+    '.section-title, .about-text, .stat, .about-actions, .skill-card, .filter-buttons, .project-card, .contact-info, .contact-method, .footer'
+);
 
-// Observe project cards
-document.querySelectorAll('.project-card').forEach(card => {
-    observer.observe(card);
+revealTargets.forEach((element, index) => {
+    element.classList.add('reveal');
+    element.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+    observer.observe(element);
 });
 
 // Add smooth scroll behavior for older browsers
@@ -252,5 +282,5 @@ document.addEventListener('click', (e) => {
 });
 
 // Console welcome message
-console.log('%cWelcome to My Portfolio! 🎉', 'font-size: 20px; color: #6366f1; font-weight: bold;');
-console.log('Feel free to explore my projects and get in touch. Happy coding! 💻');
+console.log('%cWelcome to My Portfolio!', 'font-size: 20px; color: #6366f1; font-weight: bold;');
+console.log('Feel free to explore my projects and get in touch. Happy coding!');
