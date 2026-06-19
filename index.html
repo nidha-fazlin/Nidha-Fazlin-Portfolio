@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Nidha Fazlin V.A</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Nidha Fazlin V.A</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm Nidha Fazlin</h1>
+                <p class="hero-subtitle">B.Tech Computer Science Student | Web Developer Enthusiast</p>
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+            </div>
+            <div class="hero-animation">
+                <div class="hero-photo">
+                    <img src="nidha.jpg" alt="Nidha Fazlin V.A" class="avatar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a B.Tech Computer Science student with a passion for web development and technology. I enjoy building projects, exploring new tools, and continuously improving my technical skills through hands-on learning and real-world experiences.</p>
+                    <p>Currently focused on learning and implementing modern web technologies, I'm enthusiastic about creating functional and user-friendly applications. I'm always eager to collaborate, learn from experienced developers, and contribute to exciting projects.</p>
+                    <div class="about-footer">
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-number">B.Tech</span>
+                                <span class="stat-label">Computer Science</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Core Skills</span>
+                            </div>
+                        </div>
+                        <div class="about-actions">
+                            <a href="Nidha_Fazlin_Resume.pdf" class="btn btn-secondary" target="_blank">View Resume</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Python</h3>
+                    <p>Programming, Data Structures, Scripting</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>C Programming</h3>
+                    <p>Core Programming, System Design</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🗄️</div>
+                    <h3>SQL</h3>
+                    <p>Database Design, Queries, Data Management</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, Responsive Design</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📚</div>
+                    <h3>Quick Learner</h3>
+                    <p>Adaptable, Eager to learn new technologies</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💡</div>
+                    <h3>Problem Solving</h3>
+                    <p>Logical thinking, Debugging, Algorithm Design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="clone">Clones & Projects</button>
+                <button class="filter-btn" data-filter="tools">Tools & Utilities</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1: Notes Management System -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="image-placeholder">📝</div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://notes-management-system-l2s6.vercel.app" class="project-link demo" target="_blank">View Demo</a>
+                                <a href="https://github.com/nidha-fazlin/Notes-Management-System" class="project-link repo" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Notes Management System</h3>
+                        <p>A comprehensive note-taking application with features to create, edit, delete, and organize notes efficiently. Built with modern web technologies.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Web App</span>
+                            <span class="tag">Recent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: React To-Do List -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="image-placeholder">✓</div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://react-to-do-list-alpha-ashen.vercel.app" class="project-link demo" target="_blank">View Demo</a>
+                                <a href="https://github.com/nidha-fazlin/React-To-Do-List" class="project-link repo" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>React To-Do List</h3>
+                        <p>A functional to-do list application built with React and TypeScript. Features include task creation, completion tracking, and persistent storage.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Web App</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: YouTube Clone -->
+                <div class="project-card" data-category="clone">
+                    <div class="project-image">
+                        <div class="image-placeholder">▶️</div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://youtube-clone-one-woad-93.vercel.app" class="project-link demo" target="_blank">View Demo</a>
+                                <a href="https://github.com/nidha-fazlin/youtube-clone" class="project-link repo" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>YouTube Clone</h3>
+                        <p>A YouTube interface clone demonstrating video player functionality, recommendation system, and responsive design implementation.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Weather App Using API -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="image-placeholder">🌤️</div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://nidha-fazlin.github.io/Weather-App-Using-API/" class="project-link demo" target="_blank">View Demo</a>
+                                <a href="https://github.com/nidha-fazlin/Weather-App-Using-API" class="project-link repo" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather App Using API</h3>
+                        <p>A dynamic weather application that fetches real-time weather data using third-party APIs. Features location-based forecasts and interactive UI.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">REST API</span>
+                            <span class="tag">Real-time Data</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Movie Listing Application -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="image-placeholder">🎬</div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://nidha-fazlin.github.io/Movie-listing-application-using-API/" class="project-link demo" target="_blank">View Demo</a>
+                                <a href="https://github.com/nidha-fazlin/Movie-listing-application-using-API" class="project-link repo" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Movie Listing Application</h3>
+                        <p>A movie database application that displays movies fetched from an API. Features search functionality, filtering, and detailed movie information.</p>
+                        <div class="project-tags">
+                            <span class="tag">API Integration</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Budget Tracker -->
+                <div class="project-card" data-category="tools">
+                    <div class="project-image">
+                        <div class="image-placeholder">💰</div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://nidha-fazlin.github.io/Budget-Tracker/" class="project-link demo" target="_blank">View Demo</a>
+                                <a href="https://github.com/nidha-fazlin/Budget-Tracker" class="project-link repo" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Budget Tracker</h3>
+                        <p>A personal budget management tool for tracking income and expenses. Features categorized transactions and financial analytics.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Login & Registration -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="image-placeholder">🔐</div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://nidha-fazlin.github.io/Login-and-Registration-Interface/" class="project-link demo" target="_blank">View Demo</a>
+                                <a href="https://github.com/nidha-fazlin/Login-and-Registration-Interface" class="project-link repo" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Login & Registration Interface</h3>
+                        <p>A modern authentication interface with login and registration forms. Features form validation, responsive design, and user-friendly UI.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Form Validation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: Tic Tac Toe -->
+                <div class="project-card" data-category="tools">
+                    <div class="project-image">
+                        <div class="image-placeholder">⭕</div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://nidha-fazlin.github.io/Tic-Tac-Toe/" class="project-link demo" target="_blank">View Demo</a>
+                                <a href="https://github.com/nidha-fazlin/Tic-Tac-Toe" class="project-link repo" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Tic Tac Toe Game</h3>
+                        <p>An interactive Tic Tac Toe game implementation with game logic, score tracking, and restart functionality.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Game Logic</span>
+                            <span class="tag">CSS Animation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9: Psychologist Website -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="image-placeholder">🧠</div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://psychologist-sanamj.vercel.app/" class="project-link demo" target="_blank">View Demo</a>
+                                <a href="https://github.com/nidha-fazlin/Psychologist" class="project-link repo" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Psychologist Website</h3>
+                        <p>A professional website for a psychology practice. Features service listings, appointment booking, and informational content.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10: Search Engine Interface -->
+                <div class="project-card" data-category="clone">
+                    <div class="project-image">
+                        <div class="image-placeholder">🔍</div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://nidha-fazlin.github.io/Search-Engine-Interface/" class="project-link demo" target="_blank">View Demo</a>
+                                <a href="https://github.com/nidha-fazlin/Search-Engine-Interface" class="project-link repo" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Search Engine Interface</h3>
+                        <p>A search engine UI clone demonstrating frontend design principles with a clean, minimalist interface and functional search bar.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">UI Design</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>I'm open to new opportunities, collaborations, and learning experiences. Feel free to reach out and connect with me!</p>
+                    <div class="contact-methods">
+                        <a href="https://wa.me/917025503766" class="contact-method" target="_blank">
+                            <span class="contact-icon">💬</span>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nidha-fazlin09" class="contact-method" target="_blank">
+                            <span class="contact-icon">💼</span>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/nidha-fazlin" class="contact-method" target="_blank">
+                            <span class="contact-icon">🐙</span>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.instagram.com/_nxdha.__/" class="contact-method" target="_blank">
+                            <span class="contact-icon">📸</span>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Nidha Fazlin V.A. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
